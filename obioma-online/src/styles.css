@@ -1,4 +1,79 @@
 /* You can add global styles to this file, and also import other style files */
+/* font-family: 'Montserrat', sans-serif;
+font-family: 'Slabo 27px', serif; */
+
+img{
+  max-width:100%;
+}
+
+a{
+  transition: all 200ms ease-in;
+}
+
+.section{
+  min-height:100vh;
+  height:inherit;
+  align-items:center;
+  display:flex;
+}
+
+.half-section{
+  min-height:50vh;
+  height:inherit;
+  align-items:center;
+  display:flex;
+}
+
+.underline-black{
+  background-color:#000;
+  width:50px;
+  height:2px;
+  margin-top:30px;
+  margin-bottom: 15px;
+}
+
+.underline-white{
+  background-color:#fff;
+  width:50px;
+  height:2px;
+  margin-top:30px;
+  margin-bottom: 15px;
+}
+
+h3{
+  font-family: 'Slabo 27px', serif;
+}
+
+p{
+  font-family: 'Montserrat', sans-serif;
+  font-size:0.8em;
+}
+
+.black-bg{
+  background-color: #000;
+  height:100vh;
+  display: flex;
+  align-items: center;
+  padding-left:100px;
+}
+
+.white-bg{
+  background-color: #fff;
+  height:100vh;
+  display: flex;
+  align-items: center;
+  padding-left:175px;
+}
+
+.black-bg h3, .black-bg p{
+  color: #ffffffce;
+  width:70%;
+}
+
+.white-bg h3, .white-bg p{
+  color: #000;
+  width:70%;
+}
 
  /* ********************TOASTR********************* */
 /* based on angular-toastr css https://github.com/Foxandxss/angular-toastr/blob/cb508fe6801d6b288d3afc525bb40fee1b101650/dist/angular-toastr.css */

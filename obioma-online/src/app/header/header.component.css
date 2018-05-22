@@ -1,0 +1,30 @@
+header{
+    width:100%;
+    position:fixed;
+    background-color:#fff;
+    padding-top:10px;
+    height:65px;
+    box-shadow: 5px 5px 150px #0000001b;
+    z-index:999;
+}
+
+a.nav-link{
+    font-size: 0.8em;
+    font-family: "Montserrat", sans-serif;
+    color: #000;
+    font-weight: 400;
+}
+
+a.nav-link:hover{
+    color:#999;
+}
+
+a.order{
+    background-color: #d47011;
+    color:#fff;
+}
+
+a.order:hover{
+    background-color: #999;
+    color:#fff;
+}

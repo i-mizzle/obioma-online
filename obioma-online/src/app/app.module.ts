@@ -9,9 +9,20 @@ import { AppComponent } from './app.component';
 import { LandingComponent } from './landing/landing.component';
 import { BookingFormComponent } from './landing/booking-form/booking-form.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { AdjustmentFormComponent } from './landing/booking-form/adjustment-form/adjustment-form.component';
+import { RepairFormComponent } from './landing/booking-form/repair-form/repair-form.component';
 
 const appRoutes: Routes = [
   { path: '', component: LandingComponent },
+  { path: 'booking', 
+    component: BookingFormComponent, 
+    children: [
+      { path:'adjustment', component: AdjustmentFormComponent },
+      { path:'repair', component: RepairFormComponent }
+    ]
+  },
   { path: '**', component: NotFoundComponent }
 ]
 
@@ -20,7 +31,11 @@ const appRoutes: Routes = [
     AppComponent,
     LandingComponent,
     BookingFormComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    HeaderComponent,
+    FooterComponent,
+    AdjustmentFormComponent,
+    RepairFormComponent
   ],
   imports: [
     BrowserModule,
