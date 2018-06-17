@@ -1,0 +1,20 @@
+h6{
+    margin-top:20px;
+    margin-bottom:10px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight:400;
+    font-size:0.9em;
+    color:#D26F24;
+}
+
+.selected{
+    padding:7px;
+    padding-bottom:0 !important;
+    background-color:#9d9d9d63;
+    margin-right:5px;
+    border-radius:3px;
+}
+
+.selected p{
+    color:#fff;
+}

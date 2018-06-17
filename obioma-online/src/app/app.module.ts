@@ -4,6 +4,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule, Routes, RouterLinkActive } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import { ToastrModule } from 'ngx-toastr';
+import { FormsModule }   from '@angular/forms';
+import 'scroll-triggers';
 
 import { AppComponent } from './app.component';
 import { LandingComponent } from './landing/landing.component';
@@ -13,16 +15,19 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { AdjustmentFormComponent } from './landing/booking-form/adjustment-form/adjustment-form.component';
 import { RepairFormComponent } from './landing/booking-form/repair-form/repair-form.component';
+import { ContactComponent } from './contact/contact.component';
 
 const appRoutes: Routes = [
   { path: '', component: LandingComponent },
   { path: 'booking', 
     component: BookingFormComponent, 
     children: [
+      { path: '', redirectTo: 'adjustment', pathMatch:'full' },
       { path:'adjustment', component: AdjustmentFormComponent },
       { path:'repair', component: RepairFormComponent }
     ]
   },
+  { path: 'contact', component: ContactComponent },
   { path: '**', component: NotFoundComponent }
 ]
 
@@ -35,11 +40,13 @@ const appRoutes: Routes = [
     HeaderComponent,
     FooterComponent,
     AdjustmentFormComponent,
-    RepairFormComponent
+    RepairFormComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    FormsModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only

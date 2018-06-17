@@ -1,3 +1,115 @@
-<p>
-  adjustment-form works!
-</p>
+<div class="row animated fadeIn">
+  <form (ngSubmit)="placeOrder(f)" #f="ngForm">
+    <h6>LET'S HAVE SOME DETAILS OF THE ITEMS<br><small>Select the item type and quantity then click on "add item" for each selection</small></h6>
+    <div class="row">
+      <div class="col-md-6">
+        <P>ITEM TYPE</P>
+        <select name="itemtype" ngModel required>
+          <option value="">--Select item type--</option>
+          <option *ngFor="let item of items" value="{{item}}">{{ item.itemName }} | {{ item.price | currency:'NGN ':'symbol':'3.2-2' }}</option>
+        </select>
+        <!-- <input type="hidden" name="itemprice" value="{{itemPrice}}" ngModel required> -->
+      </div>
+      <div class="col-md-4">
+        <P>QUANTITY</P>
+        <input type="number" name="itemquantity" placeholder="How many of this item type?" ngModel required>
+      </div>
+      <div class="col-md-2">
+        <P>CLICK TO ADD</P>
+        <button (click)="addItem(f)" class="add" type="submit"><i class="fas fa-plus-square"></i> add item</button>
+      </div>
+      <hr>
+    </div>
+    <span data-scroll data-scroll-class="slideInDown" class="animated" *ngIf="itemsSelected;else noSelection">
+      <div class="container">
+        <div class="row text-center">
+          <div class="col-md-2 selected" *ngFor="let selectedItem of selectedItems">
+            <p>{{selectedItem.item}} | {{selectedItem.quantity}}</p>
+          </div>
+        </div>
+      </div>
+    </span>
+    <ng-template #noSelection>
+      <div class="alert alert-info" role="alert">
+        <p>Items will show up here when selected</p>
+      </div>
+    </ng-template>
+  <div class="row">
+    <div class="col-md-12">
+      <h6>YOUR DETAILS</h6>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <P>NAME</P>
+      <input type="text" name="name" placeholder="Full name" ngModel required>
+    </div>
+    <div class="col-md-6">
+      <P>EMAIL</P>
+      <input type="email" name="email" placeholder="Email address" ngModel required>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <P>PHONE NUMBER</P>
+      <input type="text" name="phone1" placeholder="Phone number" ngModel required>
+    </div>
+    <div class="col-md-6">
+      <P>PHONE NUMBER</P>
+      <input type="text" name="phone2" placeholder="Other phone (if available)" ngModel>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-9">
+      <p>PICKUP/DELIVERY ADDRESS</p>
+      <input type="text" name="address" placeholder="Your Address" ngModel required>
+    </div>
+    <div class="col-md-3">
+      <p>TOTAL NO. OF ITEMS</p>
+      <input type="number" name="numberofitems" placeholder="How many items" value="{{totalItems}}" disabled ngModel required>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <p>LANDMARK</p>
+      <input type="text" name="landmark" placeholder="Any landmark we can use to easily find you" ngModel required>
+    </div>
+    <div class="col-md-6">
+      <P>LOCATION</P>
+      <input type="text" name="location" placeholder="City/Location" ngModel required>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <P>MORE INFORMATION ABOUT YOUR ORDER</P>
+      <textarea name="moreinfo" placeholder="Please tell us more about your order and what you will like to do" ngModel required></textarea>
+    </div>
+    <div class="col-md-6">
+      <p>MEASURMENTS</p>
+      <div class="row">
+        <div class="col-md-6">
+            <input type="text" name="neck" placeholder="Neck" ngModel required>
+        </div>
+        <div class="col-md-6">
+            <input type="text" name="shoulder" placeholder="Shoulder length" ngModel required>
+        </div>
+        <div class="col-md-6">
+            <input type="text" name="arm" placeholder="Arm length" ngModel required>
+        </div>
+        <div class="col-md-6">
+            <input type="text" name="waist" placeholder="Waist" ngModel required>
+        </div>
+        <div class="col-md-6">
+            <input type="text" name="lap" placeholder="Lap/thigh" ngModel required>
+        </div>
+        <div class="col-md-6">
+            <input type="text" name="trouser" placeholder="Trouser length" ngModel required>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <button class="submit-form" type="submit">Place Order</button>
+  </div>
+</form>
+</div>

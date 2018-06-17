@@ -1,9 +1,26 @@
 <app-header></app-header>
 <div class="body-container animated slideInUp">
-  <div class="section">
+  <div class="section-noflex">
     <div class="container">
       <div class="row">
-
+        <div class="col-md-10 offset-md-1">
+          <div class="text-container">
+            <h3>Booking</h3>
+            <div class="underline-black"></div>
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes</p>
+            <div class="row">
+              <div class="col-md-3 nopadding text-center" style="padding:0!important; margin:0!important">
+                <a class="booking-tab-button" routerLink="adjustment" routerLinkActive="active">ADJUSTMENT</a>
+              </div>
+              <div class="col-md-3 nopadding text-center" style="padding:0!important; margin:0!important">
+                <a class="booking-tab-button" routerLink="repair" routerLinkActive="active">REPAIR</a>
+              </div>
+              <div class="col-md-12">
+                <router-outlet></router-outlet>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>

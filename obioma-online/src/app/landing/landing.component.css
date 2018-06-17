@@ -1,8 +1,9 @@
 .body-container{
     position: relative;
+    width:100%!important;
 }
 .photo-ripped{
-    background:url('../../assets/img/torn.jpg') no-repeat center center;
+    background:url('../../assets/img/hero.jpg') no-repeat center center;
     background-size:cover;
     height:100vh;
 }
@@ -16,7 +17,7 @@
 .order-button{
     width:30%;
     position:absolute;
-    top:85vh;
+    top:65vh;
     left:35%;
     height:200px;
     align-items:center;
@@ -78,4 +79,16 @@ p.testimonial{
     height:3px;
     background-color:#000;
     margin-bottom:10px;
+}
+
+.overlay{
+    background-color:rgba(0, 0, 0, 0.575);
+    width:100%;
+    position: absolute;
+    left:0;top:0;
+}
+
+p.hero-text{
+    color:#fff;
+    font-size:1.2em;
 }
